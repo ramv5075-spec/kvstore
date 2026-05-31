@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.kvstore.core.InMemoryStoreTest" time="0.06" tests="3" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="24"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/ramvasanthmahendran/Desktop/codespace/kvstore/target/test-classes:/Users/ramvasanthmahendran/Desktop/codespace/kvstore/target/classes:/Users/ramvasanthmahendran/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/ramvasanthmahendran/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/ramvasanthmahendran/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="24"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/ramvasanthmahendran/Desktop/codespace/kvstore/target/surefire/surefirebooter-20260531181111259_3.jar /Users/ramvasanthmahendran/Desktop/codespace/kvstore/target/surefire 2026-05-31T18-11-11_200-jvmRun1 surefire-20260531181111259_1tmp surefire_0-20260531181111259_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/ramvasanthmahendran/Desktop/codespace/kvstore/target/test-classes:/Users/ramvasanthmahendran/Desktop/codespace/kvstore/target/classes:/Users/ramvasanthmahendran/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/ramvasanthmahendran/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/ramvasanthmahendran/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/ramvasanthmahendran/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/ramvasanthmahendran"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-04-15"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/ramvasanthmahendran/Desktop/codespace/kvstore"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/ramvasanthmahendran/Desktop/codespace/kvstore/target/surefire/surefirebooter-20260531181111259_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="24.0.1+9-30"/>
+    <property name="user.name" value="ramvasanthmahendran"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.1.2"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/ramvasanthmahendran/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/_f/6y8dbxhs33s9s5xq068xn1nc0000gn/T/"/>
+    <property name="java.version" value="24.0.1"/>
+    <property name="user.dir" value="/Users/ramvasanthmahendran/Desktop/codespace/kvstore"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/ramvasanthmahendran/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="24.0.1+9-30"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="68.0"/>
+  </properties>
+  <testcase name="basicPutAndGet" classname="com.kvstore.core.InMemoryStoreTest" time="0.043">
+    <system-out><![CDATA[18:11:11.538 [main] INFO com.kvstore.wal.WALReplay -- No WAL file found at data/test.wal, starting fresh
+18:11:11.541 [main] INFO com.kvstore.core.InMemoryStore -- Recovery complete: 0 WAL entries applied
+18:11:11.542 [main] INFO com.kvstore.wal.WAL -- WAL opened at data/test.wal
+18:11:11.543 [main] INFO com.kvstore.core.InMemoryStore -- InMemoryStore ready, 0 keys loaded
+18:11:11.544 [main] DEBUG com.kvstore.wal.WAL -- WAL append lsn=1 op=PUT key=k1
+18:11:11.544 [main] DEBUG com.kvstore.core.InMemoryStore -- PUT key=k1 valueSize=5
+18:11:11.544 [main] DEBUG com.kvstore.core.InMemoryStore -- GET key=k1 -> HIT
+18:11:11.545 [main] DEBUG com.kvstore.core.InMemoryStore -- GET key=k1 -> HIT
+18:11:11.545 [main] INFO com.kvstore.wal.WAL -- WAL closed
+]]></system-out>
+  </testcase>
+  <testcase name="deleteShouldReturnEmpty" classname="com.kvstore.core.InMemoryStoreTest" time="0.002">
+    <system-out><![CDATA[18:11:11.551 [main] INFO com.kvstore.wal.WALReplay -- No WAL file found at data/test.wal, starting fresh
+18:11:11.551 [main] INFO com.kvstore.core.InMemoryStore -- Recovery complete: 0 WAL entries applied
+18:11:11.551 [main] INFO com.kvstore.wal.WAL -- WAL opened at data/test.wal
+18:11:11.551 [main] INFO com.kvstore.core.InMemoryStore -- InMemoryStore ready, 0 keys loaded
+18:11:11.551 [main] DEBUG com.kvstore.wal.WAL -- WAL append lsn=1 op=PUT key=k1
+18:11:11.551 [main] DEBUG com.kvstore.core.InMemoryStore -- PUT key=k1 valueSize=5
+18:11:11.551 [main] DEBUG com.kvstore.wal.WAL -- WAL append lsn=2 op=DELETE key=k1
+18:11:11.551 [main] DEBUG com.kvstore.core.InMemoryStore -- DELETE key=k1
+18:11:11.551 [main] DEBUG com.kvstore.core.InMemoryStore -- GET key=k1 -> MISS
+18:11:11.551 [main] INFO com.kvstore.wal.WAL -- WAL closed
+]]></system-out>
+  </testcase>
+  <testcase name="crashRecoveryShouldRestoreState" classname="com.kvstore.core.InMemoryStoreTest" time="0.004">
+    <system-out><![CDATA[18:11:11.553 [main] INFO com.kvstore.wal.WALReplay -- No WAL file found at data/test.wal, starting fresh
+18:11:11.553 [main] INFO com.kvstore.core.InMemoryStore -- Recovery complete: 0 WAL entries applied
+18:11:11.553 [main] INFO com.kvstore.wal.WAL -- WAL opened at data/test.wal
+18:11:11.553 [main] INFO com.kvstore.core.InMemoryStore -- InMemoryStore ready, 0 keys loaded
+18:11:11.553 [main] DEBUG com.kvstore.wal.WAL -- WAL append lsn=1 op=PUT key=name
+18:11:11.553 [main] DEBUG com.kvstore.core.InMemoryStore -- PUT key=name valueSize=3
+18:11:11.553 [main] DEBUG com.kvstore.wal.WAL -- WAL append lsn=2 op=PUT key=goal
+18:11:11.553 [main] DEBUG com.kvstore.core.InMemoryStore -- PUT key=goal valueSize=5
+18:11:11.553 [main] DEBUG com.kvstore.wal.WAL -- WAL append lsn=3 op=DELETE key=goal
+18:11:11.554 [main] DEBUG com.kvstore.core.InMemoryStore -- DELETE key=goal
+18:11:11.554 [main] INFO com.kvstore.wal.WAL -- WAL closed
+18:11:11.555 [main] INFO com.kvstore.wal.WALReplay -- WAL replay complete: 3 entries recovered, 0 skipped
+18:11:11.555 [main] INFO com.kvstore.core.InMemoryStore -- Recovery complete: 3 WAL entries applied
+18:11:11.555 [main] INFO com.kvstore.wal.WAL -- WAL opened at data/test.wal
+18:11:11.555 [main] INFO com.kvstore.core.InMemoryStore -- InMemoryStore ready, 2 keys loaded
+18:11:11.555 [main] DEBUG com.kvstore.core.InMemoryStore -- GET key=name -> HIT
+18:11:11.555 [main] DEBUG com.kvstore.core.InMemoryStore -- GET key=goal -> MISS
+18:11:11.556 [main] INFO com.kvstore.wal.WAL -- WAL closed
+]]></system-out>
+  </testcase>
+</testsuite>
