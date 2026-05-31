@@ -1,57 +1,71 @@
 package com.kvstore;
 
-import com.kvstore.cluster.*;
+import com.kvstore.raft.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.*;
 
 public class Main {
 
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception {
-        log.info("=== starting distributed KV store - phase 2 ===");
+        log.info("=== phase 3: raft consensus ===");
 
-        Node node1 = new Node("node-1", "localhost", 7001);
-        Node node2 = new Node("node-2", "localhost", 7002);
-        Node node3 = new Node("node-3", "localhost", 7003);
+        RaftCluster cluster = new RaftCluster();
+        cluster.addNode("raft-1");
+        cluster.addNode("raft-2");
+        cluster.addNode("raft-3");
+        cluster.connectPeers();
+        cluster.startAll();
 
-        ClusterManager cluster = new ClusterManager();
-        cluster.addNode(node1);
-        cluster.addNode(node2);
-        cluster.addNode(node3);
+        log.info("waiting for leader election...");
+        RaftNode leader = cluster.waitForLeader(3000);
+        log.info("leader elected: {}", leader.getNodeId());
+        cluster.printStatus();
 
-        log.info("--- writing 6 keys ---");
-        cluster.put("name",    "ram".getBytes());
-        cluster.put("role",    "engineer".getBytes());
-        cluster.put("goal",    "faang".getBytes());
-        cluster.put("lang",    "java".getBytes());
-        cluster.put("phase",   "two".getBytes());
-        cluster.put("project", "kvstore".getBytes());
+        log.info("--- writing via leader ---");
+        leader.clientPut("name",    "ram".getBytes());
+        leader.clientPut("goal",    "faang".getBytes());
+        leader.clientPut("lang",    "java".getBytes());
+        leader.clientPut("project", "kvstore".getBytes());
 
-        log.info("--- reading keys ---");
-        List<String> keys = List.of("name","role","goal","lang","phase","project");
-        for (String key : keys) {
-            Node primary = cluster.getPrimaryNode(key);
-            String value = new String(cluster.get(key).orElse("NOT FOUND".getBytes()));
-            log.info("key={} value={} node={}", key, value, primary.getNodeId());
+        log.info("--- reading from all nodes ---");
+        for (RaftNode node : cluster.getNodes()) {
+            String name = new String(node.get("name").orElse("NOT FOUND".getBytes()));
+            String goal = new String(node.get("goal").orElse("NOT FOUND".getBytes()));
+            log.info("node={} role={} name={} goal={}",
+                node.getNodeId(), node.getRole(), name, goal);
         }
 
-        log.info("--- key distribution across nodes ---");
-        List<String> allKeys = List.of("name","role","goal","lang","phase","project",
-            "user1","user2","user3","user4","user5","user6","user7","user8","user9","user10");
-        Map<String, Integer> dist = cluster.getRing().getKeyDistribution(allKeys);
-        dist.forEach((nodeId, count) ->
-            log.info("node={} keys={}", nodeId, count));
-
-        log.info("--- simulating node-2 failure ---");
-        cluster.removeNode(node2);
-        for (String key : keys) {
-            String value = new String(cluster.get(key).orElse("NOT FOUND".getBytes()));
-            log.info("key={} value={}", key, value);
+        log.info("--- deleting key via leader ---");
+        leader.clientDelete("lang");
+        Thread.sleep(100);
+        for (RaftNode node : cluster.getNodes()) {
+            String lang = new String(node.get("lang").orElse("DELETED".getBytes()));
+            log.info("node={} lang={}", node.getNodeId(), lang);
         }
 
-        log.info("=== phase 2 complete ===");
+        log.info("--- simulating leader crash ---");
+        String oldLeaderId = leader.getNodeId();
+        leader.stop();
+        log.info("node {} crashed", oldLeaderId);
+
+        Thread.sleep(500);
+        RaftNode newLeader = cluster.waitForLeader(3000);
+        log.info("new leader elected: {}", newLeader.getNodeId());
+        cluster.printStatus();
+
+        log.info("--- writing after leader crash ---");
+        newLeader.clientPut("recovery", "success".getBytes());
+        Thread.sleep(100);
+
+        for (RaftNode node : cluster.getNodes()) {
+            if (node.getNodeId().equals(oldLeaderId)) continue;
+            String recovery = new String(node.get("recovery").orElse("NOT FOUND".getBytes()));
+            log.info("node={} recovery={}", node.getNodeId(), recovery);
+        }
+
+        log.info("=== phase 3 complete ===");
+        cluster.stopAll();
     }
 }
