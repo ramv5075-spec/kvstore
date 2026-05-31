@@ -61,11 +61,16 @@ public class RaftNode {
     // ─── Election Timer ───────────────────────────────────────────────────────
 
     private void resetElectionTimer() {
+        if (!running || scheduler.isShutdown()) return;
         if (electionTimer != null) electionTimer.cancel(false);
         int timeout = ELECTION_TIMEOUT_MIN +
             new Random().nextInt(ELECTION_TIMEOUT_MAX - ELECTION_TIMEOUT_MIN);
-        electionTimer = scheduler.schedule(
-            this::startElection, timeout, TimeUnit.MILLISECONDS);
+        try {
+            electionTimer = scheduler.schedule(
+                this::startElection, timeout, TimeUnit.MILLISECONDS);
+        } catch (Exception e) {
+            // scheduler shut down, node is stopped
+        }
     }
 
     // ─── Leader Election ──────────────────────────────────────────────────────
@@ -218,6 +223,7 @@ public class RaftNode {
             String leaderId, int term, int index,
             String key, byte[] value, boolean delete) {
 
+        if (!running) return false;
         if (term < currentTerm.get()) return false;
 
         currentTerm.set(term);

@@ -1,2 +1,3 @@
 com/kvstore/cluster/ConsistentHashRingTest.class
 com/kvstore/core/InMemoryStoreTest.class
+com/kvstore/raft/RaftClusterTest.class

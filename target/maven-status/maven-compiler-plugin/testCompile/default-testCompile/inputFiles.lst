@@ -1,2 +1,3 @@
 /Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/test/java/com/kvstore/cluster/ConsistentHashRingTest.java
 /Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/test/java/com/kvstore/core/InMemoryStoreTest.java
+/Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/test/java/com/kvstore/raft/RaftClusterTest.java
