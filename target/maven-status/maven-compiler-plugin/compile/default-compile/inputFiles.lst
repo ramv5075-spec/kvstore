@@ -1,4 +1,7 @@
 /Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/main/java/com/kvstore/Main.java
+/Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/main/java/com/kvstore/cluster/ClusterManager.java
+/Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/main/java/com/kvstore/cluster/ConsistentHashRing.java
+/Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/main/java/com/kvstore/cluster/Node.java
 /Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/main/java/com/kvstore/core/InMemoryStore.java
 /Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/main/java/com/kvstore/core/KVStore.java
 /Users/ramvasanthmahendran/Desktop/codespace/kvstore/src/main/java/com/kvstore/core/StoreEntry.java
