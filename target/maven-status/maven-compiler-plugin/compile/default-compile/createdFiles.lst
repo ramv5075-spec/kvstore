@@ -2,10 +2,14 @@ com/kvstore/cluster/Node$State.class
 com/kvstore/cluster/ConsistentHashRing.class
 com/kvstore/core/StoreEntry.class
 com/kvstore/wal/WALReplay.class
+com/kvstore/KVStoreApplication.class
+com/kvstore/api/KVStoreService$NodeStatus.class
 com/kvstore/cluster/Node.class
 com/kvstore/wal/WAL.class
+com/kvstore/api/KVStoreService$ClusterStatus.class
 com/kvstore/raft/RaftLog.class
 com/kvstore/raft/RaftLog$LogEntry.class
+com/kvstore/api/KVController.class
 com/kvstore/core/KVStore.class
 com/kvstore/wal/WALEntry.class
 com/kvstore/Main.class
@@ -14,4 +18,5 @@ com/kvstore/cluster/ClusterManager.class
 com/kvstore/raft/RaftCluster.class
 com/kvstore/core/InMemoryStore.class
 com/kvstore/wal/WALEntry$OpType.class
+com/kvstore/api/KVStoreService.class
 com/kvstore/raft/RaftRole.class
