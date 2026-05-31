@@ -1,0 +1,8 @@
+com/kvstore/core/KVStore.class
+com/kvstore/wal/WALEntry.class
+com/kvstore/Main.class
+com/kvstore/core/StoreEntry.class
+com/kvstore/wal/WALReplay.class
+com/kvstore/core/InMemoryStore.class
+com/kvstore/wal/WALEntry$OpType.class
+com/kvstore/wal/WAL.class
